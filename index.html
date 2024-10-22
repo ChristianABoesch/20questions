@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 Questions Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #game { margin: 20px; }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <h1>20 Questions</h1>
+        <p id="question"></p>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const questions = [
+            "Is it an animal?",
+            "Is it a domestic animal?",
+            "Does it have four legs?",
+            "Is it a pet?",
+            "Can it fly?",
+            "Is it a bird?",
+            "Is it a mammal?",
+            "Is it larger than a human?",
+            "Does it live in water?",
+            "Is it a reptile?",
+            "Is it a type of fish?",
+            "Is it a type of insect?",
+            "Is it a type of fruit?",
+            "Is it a type of vehicle?",
+            "Is it a type of electronic device?",
+            "Is it a type of furniture?",
+            "Is it a type of clothing?",
+            "Is it a type of food?",
+            "Is it a type of tool?",
+            "Is it a type of sport?"
+        ];
+
+        let currentQuestion = 0;
+
+        function askQuestion() {
+            if (currentQuestion < questions.length) {
+                document.getElementById("question").innerText = questions[currentQuestion];
+            } else {
+                document.getElementById("result").innerText = "I couldn't guess it in 20 questions!";
+            }
+        }
+
+        document.getElementById("yes").onclick = function() {
+            currentQuestion++;
+            askQuestion();
+        };
+
+        document.getElementById("no").onclick = function() {
+            currentQuestion++;
+            askQuestion();
+        };
+
+        askQuestion(); // Start the game
+    </script>
+</body>
+</html>
+
