@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>20 Questions Game</title>
     <style>
-        body { font-family: Arial, sans-serif; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(to left, #0072ff, #00c6ff); /* Updated gradient to blue shades */
+        }
         #game { margin: 20px; }
+        h1 {
+            color: #e21616; /* Added reddish color to the title */
+        }
     </style>
 </head>
 <body>
     <div id="game">
-        <h1>20 Questions</h1>
+        <h1>20 Questions, 0 Answers</h1>
         <p id="question"></p>
         <button id="yes">Yes</button>
         <button id="no">No</button>
@@ -20,35 +26,37 @@
 
     <script>
         const questions = [
-            "Is it an animal?",
-            "Is it a domestic animal?",
-            "Does it have four legs?",
-            "Is it a pet?",
-            "Can it fly?",
-            "Is it a bird?",
-            "Is it a mammal?",
-            "Is it larger than a human?",
-            "Does it live in water?",
-            "Is it a reptile?",
-            "Is it a type of fish?",
-            "Is it a type of insect?",
-            "Is it a type of fruit?",
-            "Is it a type of vehicle?",
-            "Is it a type of electronic device?",
-            "Is it a type of furniture?",
-            "Is it a type of clothing?",
-            "Is it a type of food?",
-            "Is it a type of tool?",
-            "Is it a type of sport?"
+            { question: "Is it an animal?", options: ["What?", "Gary"] },
+            { question: "Is it a domestic animal?", options: ["You know what, maybe", "What are you talking about"] },
+            { question: "Does it have four legs?", options: ["Your mom has four legs", "Click me"] },
+            { question: "Is it a pet?", options: ["Whadya asking me for??", "Metal detector"] },
+            { question: "Can it fly?", options: ["I'm so hip and cool", "Love me"] },
+            { question: "Is it a bird?", options: ["Pat I'd like to solve the puzzle", "My old username from high school"] },
+            { question: "Is it a mammal?", options: ["Ma'am", "Mal"] },
+            { question: "Is it larger than a human?", options: ["You sound like my dad", "God Of War: Ragnarok"] },
+            { question: "Does it live in water?", options: ["I think I know the answer", "Hot dogs"] },
+            { question: "Is it a reptile?", options: ["We can't all know everything", "That old piece of cheese"] },
+            { question: "Is it a type of fish?", options: ["Say what now", "Licc"] },
+            { question: "Is it a type of insect?", options: ["I don't believe you", "Ask me that in the form of an answer"] },
+            { question: "Is it a type of fruit?", options: ["Sausages", "Grandma"] },
+            { question: "Is it a type of vehicle?", options: ["I can handle federal taxes", "Who's got the sauce"] },
+            { question: "Is it a type of electronic device?", options: ["Pick me I'm handsome", "Pick me I'm affordable"] },
+            { question: "Is it a type of furniture?", options: ["I'll do you one better, are YOU a type of furniture??", "My lunch money"] },
+            { question: "Is it a type of clothing?", options: ["You're my type <3", "Gary"] },
+            { question: "Is it a type of food?", options: ["I'm not a doctor", "Show meeeeeee potatosalad!"] },
+            { question: "Is it a type of tool?", options: ["Hey up yours, buddy", "I am a horse"] },
+            { question: "Is it a type of sport?", options: ["Cabbage Patch & Smabbage Flatch", "I think you have a problem"] }
         ];
 
         let currentQuestion = 0;
 
         function askQuestion() {
             if (currentQuestion < questions.length) {
-                document.getElementById("question").innerText = questions[currentQuestion];
+                document.getElementById("question").innerText = questions[currentQuestion].question;
+                document.getElementById("yes").innerText = questions[currentQuestion].options[0];
+                document.getElementById("no").innerText = questions[currentQuestion].options[1];
             } else {
-                document.getElementById("result").innerText = "I couldn't guess it in 20 questions!";
+                document.getElementById("result").innerText = "You'll never know the answer with that attitude";
             }
         }
 
@@ -66,4 +74,3 @@
     </script>
 </body>
 </html>
-
