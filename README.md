@@ -1,4 +1,4 @@
-# 20 Questions
+# 20 Questions, 0 Answers
 
 ## Completed Tasks
 - [x] Make the game 20 Questions
